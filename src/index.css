@@ -7,6 +7,10 @@
   html {
     scroll-behavior: smooth;
   }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+  }
 }
 
 @layer components {
@@ -16,5 +20,13 @@
   
   .btn-secondary {
     @apply bg-transparent border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200;
+  }
+  
+  .section-padding {
+    @apply py-20;
+  }
+  
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-8;
   }
 }
