@@ -1,4 +1,3 @@
-// src/data/pricing.js
 export const plans = [
   {
     id: 1,

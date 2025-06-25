@@ -1,21 +1,13 @@
 import React from 'react';
 import { Check } from 'lucide-react';
+import { SUPPORT_TYPES } from '../../utils/constants';
 
 const SupportSection = () => {
-  const faqs = [
-    {
-      question: "¿Cuánto tiempo toma la instalación?",
-      answer: "La instalación típica toma entre 2-4 horas. Nuestros técnicos coordinan contigo el mejor horario."
-    },
-    {
-      question: "¿Hay costos de instalación?",
-      answer: "No, la instalación es completamente gratuita en todos nuestros planes residenciales."
-    },
-    {
-      question: "¿Qué garantía ofrecen?",
-      answer: "Ofrecemos 99.9% de uptime garantizado y soporte técnico 24/7 sin costo adicional."
-    }
-  ];
+  const faqs = SUPPORT_TYPES;
+
+  const scrollToContact = () => {
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <section className="py-20 bg-gray-50">
@@ -39,7 +31,10 @@ const SupportSection = () => {
           ))}
         </div>
         <div className="text-center mt-12">
-          <button className="bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-700 transition-colors">
+          <button
+            onClick={scrollToContact}
+            className="bg-brand text-white font-semibold py-3 px-8 rounded-lg hover:bg-brand/80 transition-colors"
+          >
             Contactar Soporte Técnico
           </button>
         </div>

@@ -1,8 +1,14 @@
 import React from 'react';
-import { Check } from 'lucide-react';
+import { Check, MessageCircle } from 'lucide-react';
 import { plans } from '../../data/pricing';
 
 const PricingSection = () => {
+  const enviarWhatsApp = (plan) => {
+    const mensaje = `Hola, estoy interesado en el plan *${plan.name}* con velocidad *${plan.speed}* a Bs. ${plan.price}/mes. ¿Podrían brindarme más información?`;
+    const numero = '59179899909'; 
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+    window.open(url, '_blank');
+  };
 
   return (
     <section id="pricing" className="py-20 bg-gray-50">
@@ -17,16 +23,21 @@ const PricingSection = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {plans.map((plan, index) => (
-            <div key={index} className={`bg-white rounded-xl shadow-lg overflow-hidden ${plan.popular ? 'ring-2 ring-blue-500 transform scale-105' : ''}`}>
+            <div
+              key={index}
+              className={`bg-white rounded-xl shadow-lg overflow-hidden ${
+                plan.popular ? 'ring-2 ring-brand transform scale-105' : ''
+              }`}
+            >
               {plan.popular && (
-                <div className="bg-blue-500 text-white text-center py-2 font-semibold">
+                <div className="bg-brand text-white text-center py-2 font-semibold">
                   Más Popular
                 </div>
               )}
               <div className="p-8">
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
                 <div className="mb-4">
-                  <span className="text-3xl font-bold text-blue-600">{plan.speed}</span>
+                  <span className="text-3xl font-bold text-brand">{plan.speed}</span>
                 </div>
                 <div className="mb-6">
                   <span className="text-4xl font-bold text-gray-900">Bs. {plan.price}</span>
@@ -41,10 +52,14 @@ const PricingSection = () => {
                   ))}
                 </ul>
                 <button
-                  className={`w-full py-3 px-6 rounded-lg font-semibold transition-colors ${
-                    plan.popular ? 'bg-blue-600 text-white hover:bg-blue-700' : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
+                  onClick={() => enviarWhatsApp(plan)}
+                  className={`w-full py-3 px-6 rounded-lg font-semibold flex items-center justify-center gap-2 transition-colors ${
+                    plan.popular
+                      ? 'bg-brand text-white hover:bg-brand/80'
+                      : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
                   }`}
                 >
+                  <MessageCircle className="w-5 h-5" />
                   Elegir Plan
                 </button>
               </div>

@@ -1,4 +1,3 @@
-// src/data/services.js
 import { Wifi, Settings, Shield, Globe } from 'lucide-react';
 
 export const services = [

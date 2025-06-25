@@ -18,15 +18,15 @@ const HeroSection = () => {
       }}
     >
       {/* Capa de superposición oscura */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-600/70 via-blue-700/70 to-indigo-800/70 z-0" />
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-400/40 via-blue-500/40 to-indigo-400/40 z-0" />
 
       {/* Contenido principal */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
         <h1 className="text-4xl md:text-6xl font-bold mb-6">
           Conectividad de Alta Velocidad
-          <span className="block text-blue-200">para tu Hogar y Empresa</span>
+          <span className="block text-brand/90">para tu Hogar y Empresa</span>
         </h1>
-        <p className="text-xl md:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto">
+        <p className="text-xl md:text-2xl mb-8 text-black max-w-3xl mx-auto">
           Internet fibra óptica + servicios técnicos especializados en Bolivia
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -34,7 +34,7 @@ const HeroSection = () => {
             variant="primary"
             size="large"
             onClick={() => scrollToSection('contact')}
-            className="bg-white text-blue-600 hover:bg-blue-50"
+            className="bg-brand text-border-600 hover:bg-border hover:text-white"
           >
             Solicita tu Instalación Gratuita
           </Button>
@@ -42,7 +42,7 @@ const HeroSection = () => {
             variant="secondary"
             size="large"
             onClick={() => scrollToSection('pricing')}
-            className="border-2 border-white text-white hover:bg-white hover:text-blue-600"
+            className="border-2 border-border text-border hover:bg-border hover:text-white"
           >
             Ver Planes
           </Button>

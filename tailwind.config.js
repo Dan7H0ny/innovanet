@@ -12,8 +12,12 @@ export default {
           500: '#3b82f6',
           600: '#2563eb',
           700: '#1d4ed8',
-        }
-      }
+        },
+        bg: '#222170',    
+        border: '#222170',
+        grids: '#c4d1ff',
+        brand: '#0cad97',
+      },
     },
   },
   plugins: [],

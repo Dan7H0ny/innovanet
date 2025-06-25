@@ -1,4 +1,3 @@
-// src/components/layout/Header.jsx
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import logo from '../../assets/images/Logo.webp'
@@ -30,14 +29,14 @@ const Header = () => {
             </div>
           </div>
           
-          {/* Desktop Navigation */}
+          {/* Navegacion de computadora */}
           <nav className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors"
+                  className="bg-bg text-white border hover:bg-brand hover:text-white px-4 py-2 text-sm font-semibold uppercase rounded transition-colors duration-200"
                 >
                   {item.label}
                 </button>
@@ -45,11 +44,11 @@ const Header = () => {
             </div>
           </nav>
 
-          {/* Mobile menu button */}
+          {/* boton de menu movil */}
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-900 hover:text-blue-600 focus:outline-none"
+              className="bg-bg text-white border hover:bg-brand hover:text-white px-4 py-2 text-sm font-semibold uppercase rounded transition-colors duration-200"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -57,7 +56,7 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Menu movil */}
       {isMenuOpen && (
         <div className="md:hidden bg-white border-t">
           <div className="px-2 pt-2 pb-3 space-y-1">
@@ -65,7 +64,7 @@ const Header = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="block px-3 py-2 text-base font-medium text-gray-900 hover:text-blue-600 w-full text-left"
+                className="bg-bg text-white border hover:bg-brand hover:text-white px-4 py-2 text-sm font-semibold uppercase rounded transition-colors duration-200"
               >
                 {item.label}
               </button>
